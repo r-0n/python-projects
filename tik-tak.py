@@ -1,3 +1,6 @@
+#Author: Aaron Wajah
+
+
 #1importing libraries for usage
 import string 
 import os 
