@@ -1,4 +1,7 @@
 #Author: Aaron Wajah
+#Description: A game of tik-tak-toe
+
+#Update: user input not working
 
 
 #1importing libraries for usage
@@ -46,11 +49,14 @@ while ship_row > rows_and_column-4 and ship_column> rows_and_column-4:
     ship_row= random.randint(0,rows_and_column-1)
     ship_column= random.randint(0,rows_and_column-1)
 
+
+#check whether the ship should be placed on board vertically
 if ship_row > rows_and_column-4:
     for a in range(ship_size):
         game[ship_row][ship_column]="X"
         ship_column+=1
 
+#check whether the ship should be placed on the board horizontally
 elif ship_column > rows_and_column-4:
     for a in range(ship_size):
         game[ship_row][ship_column]="X"
@@ -65,11 +71,14 @@ else:
         for a in range(ship_size):
             game[ship_row][ship_column]="X"
             ship_row+=1
+
+
 print("---------------------------------------------------------------------------------")
 print("|"+"Guess a possible coordinate of ship by column (alphabet)\
 followed by row(number)"+"|")
 print("---------------------------------------------------------------------------------")
 guess_count=0
+
 guess_column = input("Guess Column Letter")
 guess_row = int(input("Guess Row Number"))
 
@@ -83,10 +92,11 @@ while wrong_input:
         print("Please enter a valid row number (0-9)")
     else:
         if guess_column == AJ[ship_column] and guess_row== ship_row:
-            game[guess_column][guess_row].append("x")
+            game[guess_column][guess_row].append("X")
             guess_count+=1
             if guess_count == 4:
                 print("Congrats, You sunk the ship man!!")
+                break
         else:
             game[guess_column][guess_row].append("#")
             guess_count+=1
