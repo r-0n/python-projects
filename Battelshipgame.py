@@ -19,6 +19,8 @@ ship_size = 4
 AJ =list((string.ascii_lowercase[:10].upper()))# column header from A to J
 
 
+
+
 #creating the 10x10 board for simulation
 for row in range(rows_and_column):
     rowlist = []
@@ -98,7 +100,7 @@ while wrong_input:
                 print("Congrats, You sunk the ship man!!")
                 break
         else:
-            game[guess_column][guess_row].append("#")
+            game[guess_column][guess_row].append("#")  
             guess_count+=1
     
 
