@@ -126,16 +126,11 @@ while guess_count!=3:
     elif guess_row<0:
         print("Please enter a valid row number (0-9)")
 
-    print(guess_column)
-    print(AJ[ship_column])
-
-    print(guess_row)
-    print(ship_row)
 
     else:
         if guess_column == AJ[ship_column] and guess_row== ship_row:
 
-            game[guess_row][ord(guess_column)-65]= "X"
+            game[guess_row][ord(guess_column)-65] ="X"
 
             
             #display after ship has been hit
