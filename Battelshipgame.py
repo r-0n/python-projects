@@ -1,7 +1,7 @@
 #Author: Aaron Wajah
 #Description: Battleship game
 
-#Update: user input not working
+
 
 
 #1importing libraries for usage
@@ -86,33 +86,14 @@ else:
             ship_row+=1
 
 
-# for row in range(rows_and_column):
-#     rowlist = []
-#     for col in range(rows_and_column):
-#         rowlist.append(" ")
-#     game.append(rowlist)
 
-# for col_num in range(rows_and_column):
-#     print("   "+ AJ[col_num],end =" ")   
-# print("\n +"+"----+"* rows_and_column)
-
-# for row in range(rows_and_column):
-#     print(str(row)+"| ", end =" ")
-#     for col in range(rows_and_column):
-#         if "X" in game[row][col] or "#" in game[row][col]:
-#             print(game[row][col] + " | ", end=" ")
-#         else:
-#             game[row][col]=" "
-#             print(game[row][col] + " | ", end=" ")
-#     print("\n +"+"----+"*rows_and_column)
 
 print("---------------------------------------------------------------------------------")
 print("|"+"Guess a possible coordinate of ship by column (alphabet) followed by row(number)"+"|")
 print("---------------------------------------------------------------------------------")
 guess_count=0
 
-# guess_column = input("Guess Column Letter")
-# guess_row = int(input("Guess Row Number"))
+
 
 #wrong_input = False
 while guess_count!=10:
@@ -135,21 +116,6 @@ while guess_count!=10:
             game[guess_row][ord(guess_column)-65] = "X"
             print("Chaos on the enemy ship! you hit them \nLet's finish them up!")
 
-            
-            #display after ship has been hit
-            # for col_num in range(rows_and_column):
-            #     print("   "+ AJ[col_num],end =" ")   
-            # print("\n +"+"----+"* rows_and_column)
-
-            # for row in range(rows_and_column):
-            #     print(str(row)+"| ", end =" ")
-            #     for col in range(rows_and_column):
-            #         if "X" in game[row][col] or "#" in game[row][col]:
-            #             print(game[row][col] + " | ", end=" ")
-            #         else:
-            #             game[row][col]=" "
-            #             print(game[row][col] + " | ", end=" ")
-            #     print("\n +"+"----+"*rows_and_column)
             
 
 
