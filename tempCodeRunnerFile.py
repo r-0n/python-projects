@@ -2,12 +2,10 @@ import string
 import random
 
 AJ =list((string.ascii_lowercase[:10].upper()))
-print(AJ)
 
-new_word =''
+new_word =" "
 
 for i in range(0, 4):
-     new_word+=AJ[random.randint(0,len(AJ))]
+    new_word.append(AJ[random.randint(0,10)])
 
 print(new_word)
-
