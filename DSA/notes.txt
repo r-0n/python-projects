@@ -1,7 +1,32 @@
 Courtesy of Freecodecamp on youtube
-
+Algorithmic thinking: 
+    A way of solving problems that involves breaking a problem down 
+    into input & output along with a distinct steps that solves the problem
+    from input to output.
 
 Linear Search
 Binary Search
-Time complexity
+Time & Space complexity
     Big O
+
+Recursion & space complexity
+
+
+Arrays:
+    Access and read values
+    search for an arbituary values
+    Insert values at any point into the structure
+    Delete values 
+
+    linked-lists: a linear DS where each element is stored
+        in nodes.
+            Nodes have:
+                the data 
+                a reference to the next node in the list,
+    Implemented a linklist data structure
+                
+The Merge Algorithm:
+    merge sort
+
+
+
