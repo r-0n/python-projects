@@ -10,7 +10,7 @@ class Node:
         return "<Node data: %s>"% self.data
     
 
-class linked_list:
+class LinkedList:
     """Singly LinkedList"""
 
     def __init__(self):
@@ -131,9 +131,23 @@ class linked_list:
             current = current.next_node
         return '->'.join(nodes)
     
+    def node_at_index(self, index):
+        if index == 0:
+            return self.head
+        else:
+            position =0
+            current = self.head
+
+            while position< index:
+                current = current.next_node
+                position+=1
+
+            return current
+
+    
 
 
-l = linked_list()
+l = LinkedList()
 l.add(10)
 l.add(45)
 l.add(1010)
