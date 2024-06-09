@@ -7,7 +7,8 @@ def merge_sort(linked_list):
     -repeatedly merge the sublists to produce sorted sublists
     until one remains
     
-    returns a sorted list"""
+    returns a sorted list
+    runs O(kn log n)"""
 
     if linked_list.size() ==1:
         return linked_list
@@ -24,7 +25,8 @@ def merge_sort(linked_list):
 
 
 def split(linked_list):
-    """Divide the unsorted list at midpoint into sublists"""
+    """Divide the unsorted list at midpoint into sublists
+    takes O(k log n)"""
     
     if linked_list == None or linked_list.head ==None:
         left_half = linked_list
@@ -51,6 +53,7 @@ def merge(left, right):
 
     """Merges two linked list, sorting by data in nodes
     returns a new merged list
+    runs in linear time
     """
 
     #create a new linked list that contains node from
