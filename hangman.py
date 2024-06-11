@@ -4,7 +4,8 @@
 
 import random
 
-hangman_intro_UI ="""  _                                             
+hangman_intro_UI =""" 
+ _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
 | '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
@@ -13,7 +14,82 @@ hangman_intro_UI ="""  _
                     __/ |                      
                    |___/     """
 
-hangman= """ """
+stages=[''' 
+ ___________.._______
+| .__________))______|
+| | / /      ||
+| |/ /       ||
+| | /        ||.-''.
+| |/         |/  _  \ 
+| |          ||  `/,|
+| |          (\\`_.'
+| |         .-`--'.
+| |        /Y . . Y\\ 
+| |       // |   |  \\
+| |      //  | . |   \\ 
+| |     ')   |   |    ('
+| |          ||'||
+| |          || ||
+| |          || ||
+| |          || ||
+| |         / | | \ 
+| |         `-' `-' 
+
+
+''', 
+
+'''
+________
+|/      |  ||
+|       O  ||
+|      /|\ ||
+|      /   ||
+|          ||
+|_____     ||
+
+''',
+''' 
+________
+|/      |  ||
+|       O  ||
+|      /|\ ||
+|          ||
+|          ||
+|_____     ||
+''', 
+''' 
+________
+|/      |  ||
+|       O  ||
+|      /|  ||
+|          ||
+|          ||
+|_____     ||
+''',
+'''
+________
+|/      |  ||
+|       O  ||
+|       |  ||
+|          ||
+|          ||
+|_____     ||
+''',
+
+'''
+________
+|/      |  ||
+|          ||
+|          ||
+|          ||
+|          ||
+|_____     ||
+'''
+] 
+
+
+
+print(stages[0])
 
 print(hangman_intro_UI)
 words = ["Beekeeper","Bugatti","Redamancy","Abraham Lincoln"]
@@ -26,7 +102,7 @@ display_word = ["_"]* len(hangman_word)
 print(display_word)
 
 #game loop
-counter =0
+lives = 6
 game = True
 
 while game:
@@ -35,7 +111,7 @@ while game:
 
     for letter in range(0,len(hangman_word)):
         if user_input==hangman_word[letter]:
-            display_word[letter]= hangman_word[letter]
+            display_word[letter] = hangman_word[letter]
     
              
     print(display_word)
@@ -44,10 +120,10 @@ while game:
         print("You Won!")
         game = False
 
-    elif "_" in display_word and counter ==15:
+    elif "_" in display_word and lives == 0:
         print("You Lost!")
         game = False
 
 
-    counter+=1
+    lives-=1
 
