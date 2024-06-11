@@ -127,8 +127,8 @@ class LinkedList:
                 nodes.append("[Tail: %s]" % current.data)
             else: 
                 nodes.append("[%s]" % current.data)
-
             current = current.next_node
+
         return '->'.join(nodes)
     
     def node_at_index(self, index):
