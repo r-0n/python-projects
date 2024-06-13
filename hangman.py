@@ -14,6 +14,7 @@ hangman_intro_UI ="""
                     __/ |                      
                    |___/     """
 
+#display stages when user inputs a wrong letter
 stages=[''' 
  ___________.._______
 | .__________))______|
@@ -144,8 +145,11 @@ stages=['''
 ] 
 
 
+def game_display(list): ##function to display word progress
+    for i in list:
+        print(i,end=" ")
 
-print(stages[0])
+
 
 print(hangman_intro_UI)
 words = ["Beekeeper","Bugatti","Redamancy","Abraham Lincoln"]
@@ -155,36 +159,38 @@ hangman_word = random.choice(words).lower()
 print(f'the solution is {hangman_word}')
 
 display_word = ["_"]* len(hangman_word)
-print(display_word)
+game_display(display_word)
 
 #game loop
 lives = 6
 game = True
 
-while game:
+while game: #game loop
 
-    user_input = input("Enter a letter").lower()
+    user_input = input("\nEnter a letter\n").lower()
+    
 
     for letter in range(0,len(hangman_word)):
         if user_input==hangman_word[letter]:
             display_word[letter] = hangman_word[letter]
 
     if user_input not in hangman_word:
-        print(f'You guessed the letter{user_input}, {user_input} is not in the word')
-        
-        print(stages[lives-1])
+        print(f'You guessed the letter {user_input}, {user_input} is not in the word')
+        lives-=1
+        print(stages[lives])
     
-    print(stages[lives-1])
-    print(display_word)
+    
+    #print(display_word)
+    game_display(display_word)
 
     if "_" not in display_word:
-        print("You Won!")
+        print("\nYou Won!")
         game = False
 
     elif "_" in display_word and lives == 0:
-        print("You Lost!")
+        print("\nYou Lost!")
         game = False
 
 
-    lives-=1
+    
 
